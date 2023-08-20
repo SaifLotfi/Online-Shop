@@ -1,6 +1,6 @@
 <%- include('../includes/head.ejs') %>
     <link rel="stylesheet" href="/css/cart.css">
-    
+   
     </head>
 
     <body>
@@ -22,14 +22,14 @@
         <div class="centered">
             <button id="order-btn"  class="btn"> ORDER</button>
             <script src="https://js.stripe.com/v3/"></script>
-            <script>
-                var stripe = Stripe('pk_test_51NbMrQLwmkNwWNMMlk7e52i56GxdIGtwS5cgAVAeakrfKVAcYc1K93xtlKUMJNJxr8V9BzafFw80eQ80r80w48Jt006fSJUe6x');
-                var orderBtn = document.getElementById('order-btn');
-                orderBtn.addEventListener('click',function(){
-                    console.log('hey!');
-                    stripe.redirectToCheckout({
-                        sessionId: '<%= sessionId %>'
-                    })
-                })
-            </script>
+                    <script  >
+                        var stripe = Stripe('pk_test_51NbMrQLwmkNwWNMMlk7e52i56GxdIGtwS5cgAVAeakrfKVAcYc1K93xtlKUMJNJxr8V9BzafFw80eQ80r80w48Jt006fSJUe6x');
+                        var orderBtn = document.getElementById('order-btn');
+                        orderBtn.addEventListener('click',function(){
+                            console.log('hey!');
+                            stripe.redirectToCheckout({
+                                sessionId: '<%= sessionId %>'
+                            })
+                        })
+                    </script>
         </div>
